@@ -9,10 +9,13 @@ Vetor gerado: 2 5 7 15 20 3 6 9 18 1 */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main() {
     
-    int aleatorio[10], num, i;
+    int aleatorio[10], num, i, encontrado = 0;
+
+    srand(time(NULL)); 
 
     for(i = 0; i < 10; i++) {
         aleatorio[i] = (rand() % 20) + 1;
@@ -21,14 +24,17 @@ int main() {
     printf("Digite um numero: ");
     scanf("%d", &num);
 
-    for(i = 0; i < 20; i++) {
-        if ( num == aleatorio[i]) {
-            printf("Numero %d está presente no vetor.\n", num);
+    for(i = 0; i < 10; i++) {
+        if (num == aleatorio[i]) {
+            encontrado = 1;
             break;
-        } else {
-            printf("Numero %d está fora do vetor.\n", num);
-            break;
-        }
+        } 
+    }
+
+    if (encontrado) {
+        printf("Numero %d está presente no vetor.\n", num);
+    } else {
+        printf("Numero %d está fora do vetor.\n", num);
     }
 
     printf("Vetor gerado: ");

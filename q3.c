@@ -13,7 +13,7 @@ int main() {
     
     int num[10], menor, i;
 
-    printf("Digite 10 números: ");
+    printf("Digite 10 numeros: ");
     for(i = 0; i < 10; i++) {
         scanf("%d", &num[i]);
     }
